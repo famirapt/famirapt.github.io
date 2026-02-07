@@ -2,118 +2,157 @@
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
-				/>
-			</Hero>
+<BaseLayout 
+  title="About | Rahmatu Abdulkarim" 
+  description="About Rahmatu Abdulkarim – SOC Analyst, API & Cloud Security "
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <!-- Hero Section -->
+      <Hero
+        title="About"
+        tagline="Hi, I’m Rahmatu Abdulkarim. I am specializing in SOC, API, and Cloud Security."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/portrait.jpg"
+          alt="Rahmatu Abdulkarim at work"
+        />
+      </Hero>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed
-						do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+      <!-- Background Section -->
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            I’m a SOC Analyst passionate about cybersecurity and threat protection. I help organizations
+            monitor, detect, and respond to security incidents across networks, applications, and cloud environments.
+          </p>
+          <p>
+            My experience spans SOC operations, API security, and cloud security. I enjoy learning
+            emerging technologies, implementing best practices, and solving complex security challenges.
+          </p>
+        </div>
+      </section>
 
-		<ContactCTA />
-	</div>
+      <!-- Education Section -->
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>BSc in Cyber Security – Bayero University Kano</p>
+          <p>Certified SOC Analyst (CSA) | CompTIA Security+</p>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+          <div class="stack gap-2 lg:gap-4">
+            <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+            <h3>SOC Analyst</h3>
+            <p>Monitoring, detecting, and responding to security incidents to protect organizational assets.</p>
+          </div>
+          <div class="stack gap-2 lg:gap-4">
+            <Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+            <h3>API Security</h3>
+            <p>Ensuring secure API design, implementation, and vulnerability mitigation across applications.</p>
+          </div>
+          <div class="stack gap-2 lg:gap-4">
+            <Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+            <h3>Cloud Security</h3>
+            <p>Protecting cloud infrastructure and data using best practices, compliance, and threat detection.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+img {
+  margin-top: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--gray-200);
+}
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+.section-title {
+  font-size: var(--text-xl);
+  color: var(--gray-0);
+}
 
-	.content {
-		grid-column: 2 / 4;
-	}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+.skills-container h3 {
+  font-size: var(--text-lg);
+}
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+.skills-container p {
+  color: var(--gray-400);
+}
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+/* Hover effect for skills */
+.skills-container .stack {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+.skills-container .stack:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 50em) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 60% 1fr;
+  }
+
+  .about > :global(:first-child) {
+    grid-column-start: 2;
+  }
+
+  section {
+    display: contents;
+    font-size: var(--text-lg);
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+
+  .skills-container h3 {
+    font-size: var(--text-2xl);
+  }
+}
 </style>
