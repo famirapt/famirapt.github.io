@@ -1,0 +1,73 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Pure custom styles supporting layout transitions, typing animations, scroll reveals, and fonts.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Scroll Snap Adjustments */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* navbar padding offset */
+}
+
+/* Scroll reveal initial states */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing Caret Animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#typewriter::after {
+  content: '|';
+  animation: blink 0.75s step-end infinite;
+  color: #4f46e5;
+  margin-left: 2px;
+}
+
+/* Navbar blur scroll shadow toggle */
+header.collapsed-header {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Nav Link state tracker */
+.nav-link-active {
+  color: #4f46e5 !important;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 14px;
+  height: 2px;
+  background-color: #4f46e5;
+  border-radius: 4px;
+}
+
+/* Utility animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

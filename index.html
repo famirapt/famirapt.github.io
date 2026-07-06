@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahmatu Abdulkarim - Portfolio</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind Service via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Customize Settings -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: Object.assign({
+          fontSize: {
+            '2xs': '0.7rem',
+          },
+          colors: {
+            accent: {
+              DEFAULT: '#4f46e5',
+              hover: '#4338ca',
+              light: '#e0e7ff',
+            }
+          },
+          animation: {
+            'wave': 'wave-animation 2.5s infinite',
+          },
+          keyframes: {
+            'wave-animation': {
+              '0%': { transform: 'rotate( 0.0deg)' },
+              '10%': { transform: 'rotate(14.0deg)' },
+              '20%': { transform: 'rotate(-8.0deg)' },
+              '30%': { transform: 'rotate(14.0deg)' },
+              '40%': { transform: 'rotate(-4.0deg)' },
+              '50%': { transform: 'rotate(10.0deg)' },
+              '60%': { transform: 'rotate( 0.0deg)' },
+              '100%': { transform: 'rotate( 0.0deg)' },
+            }
+          }
+        }, {
+          fontFamily: {
+            'sans-header': ["'Space Grotesk'", 'sans-serif'],
+            sans: ["'Inter'", 'sans-serif']
+          }
+        })
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-900 antialiased selection:bg-accent/20 transition-colors duration-300">
+
+  <!-- Floating Header / Navigation -->
+  <header id="navbar" class="fixed top-0 inset-x-0 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/80 z-50 transition-all duration-300 py-4">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <a href="#home" class="font-sans-header font-bold text-xl tracking-tight text-slate-900 dark:text-white hover:text-accent transition duration-200">
+        Rahmatu Abdulkarim<span class="text-accent">.</span>
+      </a>
+
+      <!-- Desktop Menu Options -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">About</a>
+        <a href="#projects" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">Projects</a>
+        <a href="#blog" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">Blog</a>
+        <a href="#resume" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">Resume</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition duration-200">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <!-- Light / Dark Mode Toggle button -->
+        <button id="theme-btn" aria-label="Toggle Theme" class="p-2.5 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition duration-200 border border-slate-100 dark:border-slate-800">
+          <!-- Light icon -->
+          <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <!-- Dark icon -->
+          <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Responsive Mobile Burger -->
+        <button id="hamburger" aria-label="Toggle Menu" class="p-2.5 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 md:hidden transition duration-200 border border-slate-100 dark:border-slate-800">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Responsive Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 absolute top-full inset-x-0 py-6 px-6 transition-all duration-300">
+      <nav class="flex flex-col gap-4">
+        <a href="#home" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Home</a>
+        <a href="#about" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">About</a>
+        <a href="#projects" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Projects</a>
+        <a href="#blog" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Blog</a>
+        <a href="#resume" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Resume</a>
+        <a href="#contact" class="mobile-nav-link text-base font-medium py-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Home/Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+    <!-- background subtle decorative objects -->
+    <div class="absolute top-[20%] left-[-15%] w-[50%] h-[50%] bg-accent/5 dark:bg-accent/5 rounded-full filter blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[10%] right-[-15%] w-[45%] h-[45%] bg-accent/5 dark:bg-accent/5 rounded-full filter blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
+      <span class="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 text-accent font-semibold text-xs rounded-full uppercase tracking-wider mb-8 animate-fade-in">
+        👋 Welcome to my sanctuary
+      </span>
+
+      <h1 class="font-sans-header font-extrabold text-4xl sm:text-5xl md:text-6xl text-slate-950 dark:text-white tracking-tight leading-[1.1] mb-6">
+        Hi, I'm <span class="bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent">Rahmatu Abdulkarim</span>
+      </h1>
+
+      <h2 class="font-sans-header text-xl sm:text-2xl text-slate-700 dark:text-slate-350 font-medium mb-6 min-h-[40px] flex justify-center items-center">
+        <!-- Typed effect wrapper -->
+        I run on <span id="typewriter" class="text-accent underline decoration-accent/30 decoration-2 underline-offset-4 ml-1.5 font-bold"></span>
+      </h2>
+
+      <p class="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed mb-10">
+        B.Sc. Cyber Security graduate specialized in threat detection, honeypot simulation, web application defense, and incident triage.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <a href="#projects" class="w-full sm:w-auto py-3.5 px-8 rounded-full bg-accent hover:bg-accent-hover text-white font-semibold text-sm text-center shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 duration-200 transition-all">
+          View Projects
+        </a>
+        <a href="#contact" class="w-full sm:w-auto py-3.5 px-8 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-accent dark:hover:border-accent text-slate-800 dark:text-slate-200 hover:text-accent dark:hover:text-accent font-semibold text-sm text-center hover:-translate-y-0.5 duration-200 transition-all shadow-sm">
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero bottom indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
+      <a href="#about" aria-label="Scroll to About Content" class="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition duration-200">
+        <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7m14-6l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 2: About Section -->
+  <section id="about" class="py-24 bg-white dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800/60">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-lg mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Biography</span>
+        <h2 class="font-sans-header font-bold text-3xl text-slate-900 dark:text-white mt-2">About Me</h2>
+        <div class="w-12 h-1 bg-accent rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <!-- Left Side: Profile Image placeholder -->
+        <div class="md:col-span-5 flex justify-center reveal">
+          <div class="relative group">
+            <!-- Decorative outline -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-accent to-accent-hover rounded-3xl opacity-30 group-hover:opacity-40 blur-lg transition duration-500"></div>
+            <!-- Main box image -->
+            <div class="relative rounded-3xl overflow-hidden aspect-square w-64 md:w-full border-4 border-white dark:border-slate-800 shadow-md">
+              <img src="/home/rahma-yekeen/Documents/portfolio/myprofilepix.jpeg" alt="Rahmatu Abdulkarim" class="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform" referrer-policy="no-referrer" />
+            </div>
+
+            <!-- Quick Floating Details tag -->
+            <div class="absolute -bottom-4 -right-4 p-4 rounded-2xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 text-center animate-pulse">
+              <span class="block text-2xs font-semibold uppercase text-slate-400 dark:text-slate-500">Based in</span>
+              <span class="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-center gap-1 mt-0.5">
+                📍 Kaduna, NG
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content Bio & Progress Bars -->
+        <div class="md:col-span-7 flex flex-col justify-center reveal">
+          <h3 class="font-sans-header text-xl font-bold text-slate-900 dark:text-white mb-4">Hello, I'm Rahmatu!</h3>
+          <p class="text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+            Hello! I am a Cyber Security professional with hands-on experience in security operations, threat monitoring, and network infrastructure defense. I specialize in deploying and analyzing honeypots (such as Cowrie), managing alert triage in the ELK stack, configuring WAF solutions like ModSecurity, and auditing environments for vulnerabilities. I am passionate about understanding attacker behaviors to proactively build resilient security architectures.
+          </p>
+
+          <div class="flex flex-wrap gap-4 items-center">
+            <span class="text-sm font-semibold text-slate-900 dark:text-white">Let's coordinate:</span>
+            <a href="mailto:famirapt@gmail.com" class="text-sm text-accent hover:underline font-medium">famirapt@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Matrix Segment -->
+      <div class="mt-20">
+        <h3 class="font-sans-header text-center font-bold text-xl text-slate-900 dark:text-white mb-10 reveal">My Skills Matrix</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">SIEM & Log Triage (ELK/Splunk)</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">64%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="64"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Honeypots (Cowrie)</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">70%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="70"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">WAF & ModSecurity</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">39%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="39"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Network Security & UTM</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">58%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="58"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Vulnerability Audit (DVWA)</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">48%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="48"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Cloud Security & AWS IAM</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">20%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="20"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Threat Analysis</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">50%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="50"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Security Training & Awareness</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">66%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="66"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Python</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">51%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Backend</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="51"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Log Analysis</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">54%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="54"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Linux</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">85%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="85"></div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-accent/40 dark:hover:border-accent/40 transition duration-300 transform hover:-translate-y-1 shadow-sm reveal flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-slate-900 dark:text-white">Windows</h4>
+                <span class="text-xs font-semibold text-accent py-1 px-2.5 rounded-full bg-accent/10">59%</span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Other</p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+              <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out percent-bar" style="width: 0%" data-percent="59"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Projects Section -->
+  <section id="projects" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-lg mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">My Projects Showcase</span>
+        <h2 class="font-sans-header font-bold text-3xl text-slate-900 dark:text-white mt-2">Latest Creations</h2>
+        <div class="w-12 h-1 bg-accent rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <!-- Grid layout for projects -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+          <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1.5 flex flex-col h-full reveal">
+            <div class="relative overflow-hidden aspect-video">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600&h=400" alt="Cowrie SSH Honeypot Simulation" class="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform referrer-policy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Cowrie Honeypot</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Ubuntu Server</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Nmap / Medusa</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Python Parser</span>
+                </div>
+                <h3 class="font-sans-header font-semibold text-lg text-slate-900 dark:text-white mb-2">Cowrie SSH Honeypot Simulation</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Deployed a virtualized Cowrie SSH/Telnet honeypot on Ubuntu Server 22.04. Simulated brute-force attacks using Nmap, Medusa, and Metasploit, then engineered a custom Python parser to extract, analyze, and map attacker behaviors from live JSON logs.</p>
+              </div>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://github.com/famirapt/SSH-Threat-Intelligence-Lab" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs text-center hover:bg-slate-50 dark:hover:bg-slate-700 transition duration-300">
+                  GitHub
+                </a>
+                <a href="https://example.com" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-xs text-center transition duration-300">
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1.5 flex flex-col h-full reveal">
+            <div class="relative overflow-hidden aspect-video">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600&h=400" alt="ModSecurity WAF & OWASP Tuning" class="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform referrer-policy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">ModSecurity</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">OWASP CRS</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Web Application Security</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">WAF Rules</span>
+                </div>
+                <h3 class="font-sans-header font-semibold text-lg text-slate-900 dark:text-white mb-2">ModSecurity WAF & OWASP Tuning</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Configured and calibrated ModSecurity Web Application Firewall (WAF) using the OWASP Core Rule Set (CRS) to detect, log, and obstruct cross-site scripting (XSS), SQL Injection, and path traversal attack attempts.</p>
+              </div>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://github.com/famirapt" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs text-center hover:bg-slate-50 dark:hover:bg-slate-700 transition duration-300">
+                  GitHub
+                </a>
+                <a href="https://example.com" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-xs text-center transition duration-300">
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="https://github.com/famirapt" target="_blank" class="inline-flex items-center gap-2 py-3 px-6 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-350 hover:border-accent hover:text-accent font-medium text-xs transition duration-200">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          More on GitHub
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Blog Section -->
+  <section id="blog" class="py-24 bg-white dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800/60">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-lg mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent font-medium">Insights</span>
+        <h2 class="font-sans-header font-bold text-3xl text-slate-900 dark:text-white mt-2">Words & Ideas</h2>
+        <div class="w-12 h-1 bg-accent rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <!-- Blog post grid layout -->
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8" data-github-owner="famirapt" data-github-repo="blogs" data-github-path="blogs.json" data-github-branch="main">
+
+          <article data-blog-index="0" class="blog-card p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition duration-300 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500 mb-4">
+                <span>July 6, 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="font-sans-header font-bold text-xl text-slate-900 dark:text-white mb-3 hover:text-accent duration-200 transition-colors">
+                <a href="#" class="blog-trigger-link">Is Your Home Wi-Fi Truly Safe?</a>
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Most of us change our Wi-Fi passwords, but forget our router's secret back door. Follow these 4 simple steps to secure your MTN, Airtel, or Spectranet router.</p>
+            </div>
+            <a href="#" class="blog-trigger-link inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover mt-auto transition duration-200 group">
+              Read article <span class="transform group-hover:translate-x-1 duration-200 transition-transform">&rarr;</span>
+            </a>
+          </article>
+
+          <article data-blog-index="1" class="blog-card p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition duration-300 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500 mb-4">
+                <span>May 28, 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="font-sans-header font-bold text-xl text-slate-900 dark:text-white mb-3 hover:text-accent duration-200 transition-colors">
+                <a href="#" class="blog-trigger-link">Building a save password</a>
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Learn how to configure a safe password for safely practice cybersecurity concepts.</p>
+            </div>
+            <a href="#" class="blog-trigger-link inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover mt-auto transition duration-200 group">
+              Read article <span class="transform group-hover:translate-x-1 duration-200 transition-transform">&rarr;</span>
+            </a>
+          </article>
+
+          <article data-blog-index="2" class="blog-card p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition duration-300 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500 mb-4">
+                <span>May 04, 2026</span>
+                <span>•</span>
+                <span>8 min read</span>
+              </div>
+              <h3 class="font-sans-header font-bold text-xl text-slate-900 dark:text-white mb-3 hover:text-accent duration-200 transition-colors">
+                <a href="#" class="blog-trigger-link">2FA: The Simple Lock That Stops 99% of Hacks</a>
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Passwords alone are no longer enough to keep attackers at bay. Two-Factor Authentication (2FA) adds a vital second layer of defense, ensuring that stolen credentials aren't enough to grant unauthorized access.</p>
+            </div>
+            <a href="#" class="blog-trigger-link inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover mt-auto transition duration-200 group">
+              Read article <span class="transform group-hover:translate-x-1 duration-200 transition-transform">&rarr;</span>
+            </a>
+          </article>
+
+          <article data-blog-index="3" class="blog-card p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition duration-300 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500 mb-4">
+                <span>May 28, 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="font-sans-header font-bold text-xl text-slate-900 dark:text-white mb-3 hover:text-accent duration-200 transition-colors">
+                <a href="#" class="blog-trigger-link">Phishing-Guide</a>
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Phishing attacks are designed to steal your credentials, but they don't have to lead to a full account takeover.</p>
+            </div>
+            <a href="#" class="blog-trigger-link inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover mt-auto transition duration-200 group">
+              Read article <span class="transform group-hover:translate-x-1 duration-200 transition-transform">&rarr;</span>
+            </a>
+          </article>
+
+          <article data-blog-index="4" class="blog-card p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-md transition duration-300 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500 mb-4">
+                <span>june 28, 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="font-sans-header font-bold text-xl text-slate-900 dark:text-white mb-3 hover:text-accent duration-200 transition-colors">
+                <a href="#" class="blog-trigger-link">Cybersecurity-locks</a>
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Lock your digital world with a three-layer fortress: enforce rigorous authentication, encrypt all data, and isolate your networks to stop attackers in their tracks.</p>
+            </div>
+            <a href="#" class="blog-trigger-link inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover mt-auto transition duration-200 group">
+              Read article <span class="transform group-hover:translate-x-1 duration-200 transition-transform">&rarr;</span>
+            </a>
+          </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Resume Section -->
+  <section id="resume" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-lg mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent font-medium">Timeline Journey</span>
+        <h2 class="font-sans-header font-bold text-3xl text-slate-900 dark:text-white mt-2">My Background</h2>
+        <div class="w-12 h-1 bg-accent rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <!-- Timeline layouts -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Work Experience -->
+        <div class="p-8 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm relative group hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-8 reveal">
+            <div class="p-2.5 rounded-xl bg-accent/15 text-accent">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-sans-header font-bold text-xl text-slate-950 dark:text-white">Work Experience</h3>
+          </div>
+
+          <div class="border-l-2 border-slate-100 dark:border-slate-700/60 ml-3 flex flex-col gap-2">
+
+            <div class="relative pl-8 pb-10 last:pb-0 reveal">
+              <!-- Dot marker -->
+              <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-accent ring-4 ring-accent/15 dark:ring-accent/15 rounded-full transition-transform duration-300 group-hover:scale-125 z-10"></div>
+
+              <div>
+                <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jan 2026 – Feb 2026</span>
+                <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Cybersecurity Intern</h4>
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Bincom Dev Center (Remote, Lagos, Nigeria)</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Alert Triage & Incident Investigation: Monitored and analysed security events in the ELK Stack, investigating alerts to identify genuine threats.
+• Threat Detection & Analysis: Deployed a Cowrie SSH honeypot to capture attack activity, analysing brute-force attempts and attacker behaviour.
+• Web Application Security: Configured and tuned ModSecurity WAF with OWASP CRS to detect and block common threats.
+• Vulnerability Assessment: Performed structured security testing in a controlled DVWA environment, identifying vulnerabilities and documenting recommendations.
+• Cloud Security & Access Control: Configured AWS Security Groups and IAM roles using the Principle of Least Privilege.</p>
+              </div>
+            </div>
+
+            <div class="relative pl-8 pb-10 last:pb-0 reveal">
+              <!-- Dot marker -->
+              <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-accent ring-4 ring-accent/15 dark:ring-accent/15 rounded-full transition-transform duration-300 group-hover:scale-125 z-10"></div>
+
+              <div>
+                <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jan 2025 – Dec 2025</span>
+                <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Operation Intern</h4>
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">57 Signal Division (Maiduguri, Borno, Nigeria)</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Network Infrastructure Support: Managed and maintained network connectivity for secure military communications infrastructure, supporting IT upgrades.
+• Physical & Digital Surveillance: Assisted in configuring CCTV surveillance networks, contributing to integrated physical and digital security posture.
+• Perimeter Security: Supported configuration and maintenance of network devices and access controls.</p>
+              </div>
+            </div>
+
+            <div class="relative pl-8 pb-10 last:pb-0 reveal">
+              <!-- Dot marker -->
+              <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-accent ring-4 ring-accent/15 dark:ring-accent/15 rounded-full transition-transform duration-300 group-hover:scale-125 z-10"></div>
+
+              <div>
+                <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jun 2024 – Aug 2024</span>
+                <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Cybersecurity Instructor</h4>
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">BT-Hub (Zaria, Nigeria)</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Security Awareness Training: Delivered structured training sessions on safe internet practices, password security, phishing awareness, and digital hygiene.</p>
+              </div>
+            </div>
+
+            <div class="relative pl-8 pb-10 last:pb-0 reveal">
+              <!-- Dot marker -->
+              <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-accent ring-4 ring-accent/15 dark:ring-accent/15 rounded-full transition-transform duration-300 group-hover:scale-125 z-10"></div>
+
+              <div>
+                <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Dec 2022 – Jul 2023</span>
+                <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">IT Help Desk (SIWES)</h4>
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">NIS Unit, ABU Zaria (Zaria, Nigeria)</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Gateway & Perimeter Security: Configured Sophos UTM to protect the university network against external threats, applying firewall rules and content filtering.
+• Access Management: Managed internet login credentials for staff and students, enforcing secure access controls.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic timeline -->
+        <div class="p-8 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm relative group hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-8 reveal">
+            <div class="p-2.5 rounded-xl bg-accent/15 text-accent">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
+            </div>
+            <h3 class="font-sans-header font-bold text-xl text-slate-950 dark:text-white">Academic Journey</h3>
+          </div>
+
+          <div class="border-l-2 border-slate-100 dark:border-slate-700/60 ml-3 flex flex-col gap-2">
+
+            <div class="relative pl-8 pb-10 last:pb-0 reveal">
+              <!-- Dot marker -->
+              <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-accent ring-4 ring-accent/15 dark:ring-accent/15 rounded-full transition-transform duration-300 group-hover:scale-125 z-10"></div>
+
+              <div>
+                <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">2018 – 2024</span>
+                <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">B.Sc. in Cyber Security</h4>
+                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Bayero University Kano (Kano, Nigeria)</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Academic Focus: Defensive security architectures, security monitoring systems, network protocols, cryptography, and systems forensics.
+• Final Year Project: Implementation and Analysis of Cowrie Honeypot. Deployed an SSH/Telnet honeypot on Ubuntu Server, simulated attacks (Nmap, Medusa, Metasploit) to capture credentials, and developed a custom Python log parser to extract attacker behavior logs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications and Awards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <!-- Left: Certifications -->
+        <div class="p-8 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm reveal">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="p-2.5 rounded-xl bg-accent/15 text-accent">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <h3 class="font-sans-header font-bold text-xl text-slate-950 dark:text-white">Certifications</h3>
+          </div>
+          <div class="space-y-4">
+
+          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
+
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="flex-1 text-left min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Google Cybersecurity Professional Certificate">Google Cybersecurity Professional Certificate</h4>
+              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <span class="truncate">Google via Coursera</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2026</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
+
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="flex-1 text-left min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="API Security Fundamentals">API Security Fundamentals</h4>
+              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <span class="truncate">API University</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2025</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
+
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="flex-1 text-left min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Networking Basics">Networking Basics</h4>
+              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <span class="truncate">Cisco Networking Academy</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2025</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
+
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="flex-1 text-left min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Introduction to Cybersecurity">Introduction to Cybersecurity</h4>
+              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <span class="truncate">Cisco Networking Academy</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2023</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
+            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
+
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="flex-1 text-left min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Soft Skills Training">Soft Skills Training</h4>
+              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <span class="truncate">Jobberman</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2025</span>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Awards & Activities -->
+        <div class="p-8 bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-sm reveal">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="p-2.5 rounded-xl bg-accent/15 text-accent">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1.9 7h-2.1m0-7H8l1.9 7h2.1" />
+              </svg>
+            </div>
+            <h3 class="font-sans-header font-bold text-xl text-slate-950 dark:text-white">Awards & Activities</h3>
+          </div>
+          <div class="space-y-4">
+
+          <div class="p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start gap-3">
+            <div class="p-1.5 rounded-lg bg-accent/10 text-accent flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <div class="text-left">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white leading-snug">Participant, Inter-University Cybersecurity Debate</h4>
+              <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-normal">Diary of Hackers Career Fair, 2021</p>
+            </div>
+          </div>
+
+
+          <div class="p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start gap-3">
+            <div class="p-1.5 rounded-lg bg-accent/10 text-accent flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <div class="text-left">
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white leading-snug">Active learner on TryHackMe</h4>
+              <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-normal">Ongoing practical cybersecurity labs and challenges</p>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Download box CTA -->
+      <div class="text-center mt-12 bg-accent/5 dark:bg-accent/5 rounded-3xl p-8 border border-accent/15 flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
+        <div class="text-left">
+          <h4 class="font-sans-header font-bold text-slate-900 dark:text-white text-lg">Download my complete Resume</h4>
+          <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Get an organized version of my skills, capabilities and history.</p>
+        </div>
+        <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-accent hover:bg-accent-hover text-white font-semibold text-xs shadow-md transition duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Download PDF
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 6: Contact Section -->
+  <section id="contact" class="py-24 bg-white dark:bg-slate-900/40 border-t border-slate-100 dark:border-slate-800/60">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-lg mx-auto mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent font-medium">Let's Connect</span>
+        <h2 class="font-sans-header font-bold text-3xl text-slate-900 dark:text-white mt-2">Get In Touch</h2>
+        <div class="w-12 h-1 bg-accent rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+
+        <!-- Left details column -->
+        <div class="md:col-span-5 flex flex-col justify-between reveal">
+          <div>
+            <h3 class="font-sans-header font-bold text-xl text-slate-950 dark:text-white mb-4">Let's create something extraordinary together</h3>
+            <p class="text-sm text-slate-400 dark:text-slate-500 leading-relaxed mb-8">
+              Whether you have an upcoming project, a potential integration, or just want to discuss interactive designs, feel free to write me! I response in 24 hours.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Email link -->
+            <div class="flex items-center gap-4">
+              <div class="p-3 bg-slate-150 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/60 text-slate-600 dark:text-slate-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="block text-2xs uppercase tracking-wider text-slate-400 dark:text-slate-500">Email Me</span>
+                <a href="mailto:famirapt@gmail.com" class="text-sm font-semibold text-slate-900 dark:text-white hover:text-accent duration-150">famirapt@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Location info -->
+            <div class="flex items-center gap-4">
+              <div class="p-3 bg-slate-150 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/60 text-slate-600 dark:text-slate-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <span class="block text-2xs uppercase tracking-wider text-slate-400 dark:text-slate-500">Location</span>
+                <span class="text-sm font-semibold text-slate-900 dark:text-white">Kaduna, NG</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Profiles -->
+          <div class="flex items-center gap-4 mt-8">
+            <a href="https://github.com/famirapt" target="_blank" class="p-3 bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 hover:text-accent border border-slate-100 dark:border-slate-700 text-slate-500 rounded-full transition duration-200" aria-label="GitHub Profile">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/fameera-yakeen" target="_blank" class="p-3 bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 hover:text-accent border border-slate-100 dark:border-slate-700 text-slate-500 rounded-full transition duration-200" aria-label="LinkedIn Profile">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://x.com/famirah_pt" target="_blank" class="p-3 bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 hover:text-accent border border-slate-100 dark:border-slate-700 text-slate-500 rounded-full transition duration-200" aria-label="Twitter Profile">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Contact Form -->
+        <div class="md:col-span-7 p-8 bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 rounded-3xl reveal">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">Your Name</label>
+                <input type="text" id="name" required class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl py-3 px-4 text-sm text-slate-800 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition duration-200" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">Email Address</label>
+                <input type="email" id="email" required class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl py-3 px-4 text-sm text-slate-800 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition duration-200" placeholder="jane@example.com" />
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">Message</label>
+              <textarea id="message" rows="5" required class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl py-3 px-4 text-sm text-slate-800 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition duration-200" placeholder="Tell me about your project or general ideas..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-accent hover:bg-accent-hover text-white font-bold text-sm shadow-md hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-2">
+              Send Message
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </form>
+
+          <!-- Success feedback dialog -->
+          <div id="form-success" class="hidden mt-6 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-150 dark:border-emerald-800 flex items-center gap-3">
+            <div class="p-1.5 bg-emerald-100 dark:bg-emerald-800 text-emerald-600 dark:text-emerald-400 rounded-full animate-bounce">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-slate-900 dark:text-white">Message dispatched!</h5>
+              <p class="text-2xs text-slate-400 dark:text-slate-500 mt-1">Thank you, I will respond to your coordinates soon.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation / Footer -->
+  <footer class="py-12 bg-slate-100 dark:bg-slate-950 border-t border-slate-150 dark:border-slate-850">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white">
+          Rahmatu Abdulkarim<span class="text-accent">.</span>
+        </h4>
+        <p class="text-2xs text-slate-400 dark:text-slate-500 mt-1">
+          &copy; 2026 Rahmatu Abdulkarim. All visual rights reserved. Completed with high metrics.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#home" class="text-xs font-medium text-slate-400 hover:text-slate-900 dark:hover:text-white transition">Back to top</a>
+        <span class="text-slate-200 dark:text-slate-800 text-xs">|</span>
+        <span class="text-xs text-slate-400">Created via Template Exporter</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Blog Reader Modal Overlay -->
+  <div id="blog-modal" class="fixed inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+    <div id="blog-modal-content" class="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 rounded-3xl w-full max-w-2xl h-[80vh] flex flex-col overflow-hidden shadow-2xl transform scale-95 translate-y-4 transition-all duration-300">
+      <!-- Modal Header -->
+      <div class="p-5 sm:p-6 border-b border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+        <div class="text-left pr-4">
+          <div class="flex items-center gap-3 text-[10px] font-bold text-accent uppercase tracking-widest">
+            <span id="modal-blog-date"></span>
+            <span>•</span>
+            <span id="modal-blog-readtime"></span>
+          </div>
+          <h3 id="modal-blog-title" class="font-sans-header text-sm sm:text-base text-slate-950 dark:text-white mt-1.5 leading-tight font-bold"></h3>
+        </div>
+        <button id="close-blog-modal" class="p-1.5 rounded-full bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700/80 border border-slate-200/60 dark:border-slate-750 text-slate-500 hover:text-slate-800 dark:hover:text-white transition duration-150 cursor-pointer shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="modal-blog-body" class="flex-1 overflow-y-auto p-6 sm:p-8 space-y-4 text-left prose dark:prose-invert max-w-none">
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-150 dark:border-slate-800/60 flex justify-end">
+        <button id="close-blog-modal-btn" class="py-1.5 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-2xs font-bold text-slate-700 dark:text-white transition cursor-pointer">
+          Close Reader
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Raw Blog Post JSON Data Payload -->
+  <script>
+    window.PORTFOLIO_BLOG_POSTS = [{"id":"wifi-security","title":"Is Your Home Wi-Fi Truly Safe?","excerpt":"Most of us change our Wi-Fi passwords, but forget our router's secret back door. Follow these 4 simple steps to secure your MTN, Airtel, or Spectranet router.","date":"July 6, 2026","readTime":"4 min read","contentPath":"Home_WiFi_Security.md"},{"id":"password-safety","title":"Building a save password","excerpt":"Learn how to configure a safe password for safely practice cybersecurity concepts.","date":"May 28, 2026","readTime":"5 min read","contentPath":"Password_Safety.md"},{"id":"2FA","title":"2FA: The Simple Lock That Stops 99% of Hacks","excerpt":"Passwords alone are no longer enough to keep attackers at bay. Two-Factor Authentication (2FA) adds a vital second layer of defense, ensuring that stolen credentials aren't enough to grant unauthorized access.","date":"May 04, 2026","readTime":"8 min read","contentPath":"The 2FA Advantage.md"},{"id":"phishing","title":"Phishing-Guide","excerpt":"Phishing attacks are designed to steal your credentials, but they don't have to lead to a full account takeover.","date":"May 28, 2026","readTime":"5 min read","contentPath":"Phishing_Guide.md"},{"id":"3-Locks","title":"Cybersecurity-locks","excerpt":"Lock your digital world with a three-layer fortress: enforce rigorous authentication, encrypt all data, and isolate your networks to stop attackers in their tracks.","date":"june 28, 2026","readTime":"5 min read","contentPath":"The 3 Locks of Cyber Security.md"}];
+    window.GITHUB_BLOG_OWNER = "famirapt";
+    window.GITHUB_BLOG_REPO = "blogs";
+    window.GITHUB_BLOG_BRANCH = "main";
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
