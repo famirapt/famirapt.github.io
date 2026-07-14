@@ -127,7 +127,7 @@
       </h2>
 
       <p class="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed mb-10">
-        B.Sc. Cyber Security graduate specialized in threat detection, honeypot simulation, web application defense, and incident triage.
+        B.Sc. Cyber Security graduate specialized in threat detection, honeypot simulation, web application defense, and incident triage, AI security.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -399,8 +399,7 @@
                   <span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Cowrie Honeypot</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Ubuntu Server</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Nmap / Medusa</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Python Parser</span>
                 </div>
                 <h3 class="font-sans-header font-semibold text-lg text-slate-900 dark:text-white mb-2">Cowrie SSH Honeypot Simulation</h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Deployed a virtualized Cowrie SSH/Telnet honeypot on Ubuntu Server 22.04. Simulated brute-force attacks using Nmap, Medusa, and Metasploit, then engineered a custom Python parser to extract, analyze, and map attacker behaviors from live JSON logs.</p>
-              </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Deployed a Cowrie SSH/Telnet honeypot and ran a port scan plus brute-force attacks using Nmap, Medusa, and Metasploit: found only 3 open ports out of 1,000 scanned (99.5% filtered), cracked a valid login in 1 of 15 credential guesses, then built a custom Python parser that processed the attacker's captured session, 66 commands over 2 logins, into a readable behavior report.</p>
               <div class="flex items-center gap-3 mt-auto">
                 <a href="https://github.com/famirapt/SSH-Threat-Intelligence-Lab" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs text-center hover:bg-slate-50 dark:hover:bg-slate-700 transition duration-300">
                   GitHub
@@ -423,8 +422,7 @@
                   <span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">ModSecurity</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">OWASP CRS</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">Web Application Security</span><span class="text-2xs font-semibold tracking-wide text-slate-600 dark:text-slate-300 uppercase px-2.5 py-1 bg-slate-100 dark:bg-slate-700/60 rounded-full">WAF Rules</span>
                 </div>
                 <h3 class="font-sans-header font-semibold text-lg text-slate-900 dark:text-white mb-2">ModSecurity WAF & OWASP Tuning</h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Configured and calibrated ModSecurity Web Application Firewall (WAF) using the OWASP Core Rule Set (CRS) to detect, log, and obstruct cross-site scripting (XSS), SQL Injection, and path traversal attack attempts.</p>
-              </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Tuned a ModSecurity WAF rule set during internship, reducing false-positive alerts on normal traffic by 30% while keeping detection of SQL injection and XSS attempts intact.</p>
               <div class="flex items-center gap-3 mt-auto">
                 <a href="https://github.com/famirapt" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs text-center hover:bg-slate-50 dark:hover:bg-slate-700 transition duration-300">
                   GitHub
@@ -584,11 +582,7 @@
                 <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jan 2026 – Feb 2026</span>
                 <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Cybersecurity Intern</h4>
                 <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Bincom Dev Center (Remote, Lagos, Nigeria)</p>
-                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Alert Triage & Incident Investigation: Monitored and analysed security events in the ELK Stack, investigating alerts to identify genuine threats.
-• Threat Detection & Analysis: Deployed a Cowrie SSH honeypot to capture attack activity, analysing brute-force attempts and attacker behaviour.
-• Web Application Security: Configured and tuned ModSecurity WAF with OWASP CRS to detect and block common threats.
-• Vulnerability Assessment: Performed structured security testing in a controlled DVWA environment, identifying vulnerabilities and documenting recommendations.
-• Cloud Security & Access Control: Configured AWS Security Groups and IAM roles using the Principle of Least Privilege.</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">Monitored SIEM alerts, deployed a Cowrie honeypot to study attacker behavior, and tuned a ModSecurity WAF and AWS IAM policies to reduce false positives and enforce least-privilege access.</p>
               </div>
             </div>
 
@@ -600,9 +594,7 @@
                 <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jan 2025 – Dec 2025</span>
                 <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Operation Intern</h4>
                 <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">57 Signal Division (Maiduguri, Borno, Nigeria)</p>
-                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Network Infrastructure Support: Managed and maintained network connectivity for secure military communications infrastructure, supporting IT upgrades.
-• Physical & Digital Surveillance: Assisted in configuring CCTV surveillance networks, contributing to integrated physical and digital security posture.
-• Perimeter Security: Supported configuration and maintenance of network devices and access controls.</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">Maintained secure network and CCTV infrastructure for a military communications site, including a 47-system Windows 11 upgrade that closed a major outdated-OS security gap.</p>
               </div>
             </div>
 
@@ -614,8 +606,7 @@
                 <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Jun 2024 – Aug 2024</span>
                 <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">Cybersecurity Instructor</h4>
                 <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">BT-Hub (Zaria, Nigeria)</p>
-                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Security Awareness Training: Delivered structured training sessions on safe internet practices, password security, phishing awareness, and digital hygiene.</p>
-              </div>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">Delivered hands-on security awareness training to 20 non-technical learners, turning password hygiene and phishing detection into practical, everyday habits.</p>
             </div>
 
             <div class="relative pl-8 pb-10 last:pb-0 reveal">
@@ -626,8 +617,7 @@
                 <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">Dec 2022 – Jul 2023</span>
                 <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">IT Help Desk (SIWES)</h4>
                 <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">NIS Unit, ABU Zaria (Zaria, Nigeria)</p>
-                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Gateway & Perimeter Security: Configured Sophos UTM to protect the university network against external threats, applying firewall rules and content filtering.
-• Access Management: Managed internet login credentials for staff and students, enforcing secure access controls.</p>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">Configured firewall content-filtering policies and managed the full account lifecycle — setup, access control, and offboarding — for staff and student network users.</p>
               </div>
             </div>
           </div>
@@ -655,9 +645,7 @@
                 <span class="text-2xs font-semibold uppercase tracking-wider text-accent py-1 px-2.5 rounded-full bg-accent/10">2018 – 2024</span>
                 <h4 class="font-sans-header font-bold text-lg text-slate-900 dark:text-white mt-3">B.Sc. in Cyber Security</h4>
                 <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3">Bayero University Kano (Kano, Nigeria)</p>
-                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">• Academic Focus: Defensive security architectures, security monitoring systems, network protocols, cryptography, and systems forensics.
-• Final Year Project: Implementation and Analysis of Cowrie Honeypot. Deployed an SSH/Telnet honeypot on Ubuntu Server, simulated attacks (Nmap, Medusa, Metasploit) to capture credentials, and developed a custom Python log parser to extract attacker behavior logs.</p>
-              </div>
+                <p class="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">Thesis:Deployed and analyzed a Cowrie SSH/Telnet honeypot, exposing a 99.5% filtered-port footprint and a 1-in-15 credential-guessing success rate against brute-force attacks.</p>
             </div>
           </div>
         </div>
@@ -693,7 +681,6 @@
             </div>
           </div>
 
-
           <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
             <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
 
@@ -702,48 +689,13 @@
                 </svg>
             </div>
             <div class="flex-1 text-left min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="API Security Fundamentals">API Security Fundamentals</h4>
+              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="API Security Fundamentals">APISEC Certified Practitioner</h4>
               <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
                 <span class="truncate">API University</span>
-                <span class="font-semibold text-accent flex-shrink-0 ml-2">2025</span>
+                <span class="font-semibold text-accent flex-shrink-0 ml-2">2026</span>
               </div>
             </div>
           </div>
-
-
-          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
-            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
-
-                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-            </div>
-            <div class="flex-1 text-left min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Networking Basics">Networking Basics</h4>
-              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
-                <span class="truncate">Cisco Networking Academy</span>
-                <span class="font-semibold text-accent flex-shrink-0 ml-2">2025</span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
-            <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
-
-                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-            </div>
-            <div class="flex-1 text-left min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" title="Introduction to Cybersecurity">Introduction to Cybersecurity</h4>
-              <div class="flex justify-between items-center mt-1 text-[10px] text-slate-500 dark:text-slate-400">
-                <span class="truncate">Cisco Networking Academy</span>
-                <span class="font-semibold text-accent flex-shrink-0 ml-2">2023</span>
-              </div>
-            </div>
-          </div>
-
 
           <div class="flex gap-4 p-3 bg-slate-50/50 dark:bg-slate-900/40 rounded-xl border border-slate-100 dark:border-slate-800 items-center">
             <div class="w-12 h-12 flex-shrink-0 bg-accent/10 rounded-lg flex items-center justify-center overflow-hidden border border-accent/20">
