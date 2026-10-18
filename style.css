@@ -98,6 +98,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .card-link { margin-top: 10px; font-weight: 600; text-decoration: none; }
 .card-link:hover { text-decoration: underline; }
 
+.more { margin: 18px 0 0; text-align: right; font-size: 0.82rem; }
+.more a { color: var(--muted); }
+
 /* Experience and education timeline */
 .timeline { display: grid; gap: 22px; }
 .job { padding-left: 18px; border-left: 2px solid var(--accent-soft); }
