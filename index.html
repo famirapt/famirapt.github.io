@@ -16,6 +16,7 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -141,6 +142,17 @@
       </div>
     </section>
 
+    <!-- Blog -->
+    <section id="blog" class="section section-alt">
+      <div class="container">
+        <h2>Blog</h2>
+        <p class="muted">Short articles on staying safe online, pulled live from my <a href="https://github.com/famirapt/blogs" target="_blank" rel="noopener">blogs repository</a>.</p>
+        <div id="blog-list" class="cards">
+          <p class="muted">Loading posts…</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Education -->
     <section id="education" class="section section-alt">
       <div class="container">
@@ -226,12 +238,25 @@
     </section>
   </main>
 
+  <dialog id="post-dialog" class="post-dialog" aria-labelledby="post-title">
+    <div class="post-head">
+      <div>
+        <p class="post-meta" id="post-meta"></p>
+        <h2 id="post-title"></h2>
+      </div>
+      <button type="button" class="post-close" id="post-close" aria-label="Close article">&times;</button>
+    </div>
+    <div class="post-body" id="post-body"></div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Rahmatu Abdulkarim</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.umd.js"></script>
+  <script src="script.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
