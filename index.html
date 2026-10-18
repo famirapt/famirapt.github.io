@@ -3,239 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rahmatu Abdulkarim | Portfolio</title>
-  <meta name="description" content="Rahmatu Abdulkarim, cybersecurity analyst. Portfolio of security projects, experience and education.">
+  <title>Rahmatu Abdulkarim | CV</title>
+  <meta name="description" content="Rahmatu Abdulkarim, cybersecurity analyst. CV with experience, projects, education and skills.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="page">
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="#home" class="brand">Rahmatu Abdulkarim</a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <header class="cv-head">
+      <h1>Rahmatu Abdulkarim</h1>
+      <p class="role">Cybersecurity Analyst</p>
+      <p class="contact">
+        Zaria, Kaduna <span>◆</span> 0806 765 6124 <span>◆</span>
+        <a href="mailto:famirapt@gmail.com">famirapt@gmail.com</a>
+      </p>
+      <p class="links">
+        <a href="https://linkedin.com/in/famira-yaqeen" target="_blank" rel="noopener">LinkedIn</a>
+        <span>◆</span>
+        <a href="https://github.com/famirapt" target="_blank" rel="noopener">GitHub</a>
+        <span>◆</span>
+        <a href="https://famirapt.github.io/" target="_blank" rel="noopener">Portfolio</a>
+      </p>
+    </header>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero">
-      <div class="container">
-        <p class="eyebrow">Cybersecurity Analyst</p>
-        <h1>Hi, I'm Rahmatu.</h1>
-        <p class="lead">
-          Cybersecurity graduate with hands-on experience in help desk, network support and security defense.
-          I analyse system logs to spot and stop online threats, support non-technical users, and keep IT systems running smoothly.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-        </div>
-      </div>
+    <section class="cv-section">
+      <h2>Summary</h2>
+      <p>Cybersecurity graduate with experience in help desk, network support and security defense. Analyses system logs to detect and stop online threats.</p>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="container about">
-        <img class="avatar" src="myprofilepix.jpeg" alt="Rahmatu Abdulkarim">
-        <div>
-          <h2>About</h2>
-          <p>
-            I'm based in Zaria, Kaduna, Nigeria. I hold a B.Sc. in Cyber Security from Bayero University Kano
-            and am currently pursuing an M.Sc. in Information Security and Privacy at the Nigeria Defence Academy.
-            I'm interested in threat detection, honeypots, web application security and building security into everyday systems.
-          </p>
-          <p>
-            Languages: English (fluent), Hausa, Yoruba, Arabic (beginner).
-          </p>
-        </div>
-      </div>
-    </section>
+    <section class="cv-section">
+      <h2>Experience</h2>
 
-    <!-- Experience -->
-    <section id="experience" class="section section-alt">
-      <div class="container">
-        <h2>Experience</h2>
-
-        <article class="item">
-          <header>
-            <h3>Cybersecurity Intern <span class="org">· Bincom Dev Center, Lagos</span></h3>
-            <span class="date">Dec 2025 – Feb 2026</span>
-          </header>
-          <ul>
-            <li>Built an end-to-end threat detection and defense testbed using Cowrie, DVWA and the ELK stack, analysing 1,000+ security events to isolate active SSH brute-force attacks.</li>
-            <li>Hardened endpoints with ModSecurity WAF to mitigate OWASP Top 10 vulnerabilities, including SQLi and XSS.</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <header>
-            <h3>NYSC Intern <span class="org">· 57 Signal Division, Nigerian Army, Maiduguri</span></h3>
-            <span class="date">Jan 2025 – Jan 2026</span>
-          </header>
-          <ul>
-            <li>Administered routing infrastructure and kept network connectivity uninterrupted across 20+ operational units.</li>
-            <li>Rolled out an OS modernisation across 47 enterprise workstations (Windows 11) with zero business downtime and a verified security baseline.</li>
-            <li>Deployed and integrated secure IP CCTV surveillance networks with night-vision and thermal imaging endpoints.</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <header>
-            <h3>IT Help Desk (SIWES) <span class="org">· Network Infrastructure and Security Unit, ABU Zaria</span></h3>
-            <span class="date">Dec 2022 – Jul 2023</span>
-          </header>
-          <ul>
-            <li>Created and managed login details and internet access for over 10,000 students and staff.</li>
-            <li>Configured Sophos UTM firewall rules to block unauthorised traffic and protect university systems.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="cards">
-
-          <article class="card">
-            <h3>Exploitation with cURL: Hoperation Eggsploit</h3>
-            <p class="tags">TryHackMe CTF · cURL · Bash</p>
-            <ul>
-              <li>Captured 3 flags by exploiting insecure POST-based authentication.</li>
-              <li>Hijacked an authenticated session by reusing a PHPSESSID cookie.</li>
-              <li>Automated a password brute-force attack with a Bash loop, exposing missing rate limiting and lockout.</li>
-            </ul>
-            <a class="card-link" href="https://github.com/famirapt/curl-exploitation-eggsploit" target="_blank" rel="noopener">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <h3>DVWA Web Security Lab</h3>
-            <p class="tags">Kali Linux · Apache2 · MariaDB · PHP</p>
-            <ul>
-              <li>Built a DVWA lab on Kali Linux, configuring database access and PHP settings for file inclusion testing.</li>
-              <li>Exploited SQL injection and reflected XSS on Low security, then reviewed mitigations: input validation, sanitised queries, HTML encoding and CSP.</li>
-            </ul>
-            <a class="card-link" href="https://github.com/famirapt/dvwa-installation-testing-guide" target="_blank" rel="noopener">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <h3>MAC Spoofer</h3>
-            <p class="tags">Python · Cryptography</p>
-            <ul>
-              <li>Built a cross-platform tool (Linux, macOS, Windows) to change or revert MAC addresses.</li>
-              <li>Added MAC validation and random address generation.</li>
-              <li>Logged every change to a Fernet-encrypted audit file.</li>
-            </ul>
-            <a class="card-link" href="https://github.com/famirapt/Mac-Address-Spoofer" target="_blank" rel="noopener">View on GitHub →</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog -->
-    <section id="blog" class="section section-alt">
-      <div class="container">
-        <h2>Blog</h2>
-        <p class="muted">Short articles on staying safe online, pulled live from my <a href="https://github.com/famirapt/blogs" target="_blank" rel="noopener">blogs repository</a>.</p>
-        <div id="blog-list" class="cards">
-          <p class="muted">Loading posts…</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section section-alt">
-      <div class="container">
-        <h2>Education</h2>
-
-        <article class="item">
-          <header>
-            <h3>M.Sc. Information Security and Privacy <span class="org">· Nigeria Defence Academy</span></h3>
-            <span class="date">Jul 2026 – Present</span>
-          </header>
-        </article>
-
-        <article class="item">
-          <header>
-            <h3>B.Sc. Cyber Security <span class="org">· Bayero University Kano</span></h3>
-            <span class="date">2018 – 2024 · CGPA 3.71</span>
-          </header>
-          <p class="thesis-title">
-            Thesis: Cowrie SSH Honeypot Log Analysis
-            <a href="https://github.com/famirapt/SSH-Threat-Intelligence-Lab" target="_blank" rel="noopener">(GitHub)</a>
-          </p>
-          <ul>
-            <li>Deployed a Cowrie SSH honeypot on Ubuntu Server 22.04 in VirtualBox and logged attacker sessions as JSON.</li>
-            <li>Simulated a port scan, Medusa and Metasploit brute-force attacks, and a PuTTY session across four test scenarios.</li>
-            <li>Parsed the logs with a custom Python regex tool to extract timestamps, source IPs, commands and login attempts.</li>
-            <li>Recommended rate limiting, account lockout, strong passwords, restricted SSH access and IDS/IPS auto-blocking.</li>
-          </ul>
-        </article>
-
-        <h3 class="sub-heading">Certifications</h3>
-        <ul class="plain-list">
-          <li><strong>Google Cybersecurity Professional Certificate</strong> · Google via Coursera · 2026</li>
-          <li><strong>Soft Skills Training</strong> · Jobberman · 2025</li>
-          <li><strong>Continuous learning:</strong> active on <a href="https://tryhackme.com/p/famira" target="_blank" rel="noopener">TryHackMe</a></li>
+      <article class="entry">
+        <header><h3>Cybersecurity Intern <span class="org">Bincom Dev Center, Lagos</span></h3><span class="date">Dec 2025 – Feb 2026</span></header>
+        <ul>
+          <li>Built a threat detection testbed with Cowrie, DVWA and the ELK stack; analysed 1,000+ security events</li>
+          <li>Hardened endpoints with ModSecurity WAF against OWASP Top 10 (SQLi, XSS)</li>
         </ul>
-      </div>
-    </section>
+      </article>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skill-grid">
-          <div>
-            <h3>Technical Support</h3>
-            <p>Windows, Linux, troubleshooting, user accounts, routers, VPN, Sophos UTM</p>
-          </div>
-          <div>
-            <h3>Web Security</h3>
-            <p>ModSecurity WAF, DVWA, Nmap, Metasploit</p>
-          </div>
-          <div>
-            <h3>Monitoring</h3>
-            <p>ELK Stack, log analysis, Wireshark</p>
-          </div>
-          <div>
-            <h3>Other</h3>
-            <p>Bash, Python, technical documentation, user training</p>
-          </div>
-        </div>
-
-        <h3 class="sub-heading">Volunteering &amp; Awards</h3>
-        <ul class="plain-list">
-          <li><strong>Cybersecurity Analyst</strong> · Pazelgreen Technologies · Mar 2025 – Present. Working with the software and data team on the security framework, policies, architecture and governance model for software releases.</li>
-          <li><strong>Cybersecurity Instructor</strong> · BT-Hub, Nigeria · Jun – Aug 2024. Trained 20 non-technical students on everyday cyber safety and ran practical workshops on protecting social media, email and bank accounts.</li>
-          <li><strong>Participant</strong>, Inter-University Cybersecurity Debate · Diary of Hackers Career Fair · 2021</li>
+      <article class="entry">
+        <header><h3>NYSC Intern <span class="org">57 Signal Division, Nigerian Army, Maiduguri</span></h3><span class="date">Jan 2025 – Jan 2026</span></header>
+        <ul>
+          <li>Administered routing for 20+ operational units with high availability</li>
+          <li>Upgraded 47 workstations to Windows 11 with zero business downtime</li>
+          <li>Deployed secure IP CCTV networks with night-vision and thermal endpoints</li>
         </ul>
+      </article>
+
+      <article class="entry">
+        <header><h3>IT Help Desk (SIWES) <span class="org">Network Infrastructure and Security Unit, ABU Zaria</span></h3><span class="date">Dec 2022 – Jul 2023</span></header>
+        <ul>
+          <li>Managed login and internet access for 10,000+ students and staff</li>
+          <li>Configured Sophos UTM firewall rules to block unauthorised traffic</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Projects</h2>
+
+      <article class="entry">
+        <header><h3>Exploitation with cURL: Hoperation Eggsploit <span class="org">TryHackMe CTF</span></h3><a class="repo" href="https://github.com/famirapt/curl-exploitation-eggsploit" target="_blank" rel="noopener">GitHub</a></header>
+        <ul><li>Captured 3 flags via POST authentication bypass, session cookie reuse and brute force (cURL, Bash)</li></ul>
+      </article>
+
+      <article class="entry">
+        <header><h3>DVWA Web Security Lab <span class="org">Kali Linux, Apache2, MariaDB, PHP</span></h3><a class="repo" href="https://github.com/famirapt/dvwa-installation-testing-guide" target="_blank" rel="noopener">GitHub</a></header>
+        <ul><li>Configured DVWA and exploited SQL injection and reflected XSS on Low security</li></ul>
+      </article>
+
+      <article class="entry">
+        <header><h3>MAC Spoofer <span class="org">Python, Cryptography</span></h3><a class="repo" href="https://github.com/famirapt/Mac-Address-Spoofer" target="_blank" rel="noopener">GitHub</a></header>
+        <ul><li>Cross-platform tool (Linux, macOS, Windows) with MAC validation, random generation and Fernet-encrypted audit log</li></ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+
+      <article class="entry">
+        <header><h3>M.Sc. Information Security and Privacy <span class="org">Nigeria Defence Academy</span></h3><span class="date">Jul 2026 – Present</span></header>
+      </article>
+
+      <article class="entry">
+        <header><h3>B.Sc. Cyber Security <span class="org">Bayero University Kano · CGPA 3.71</span></h3><span class="date">2018 – 2024</span></header>
+        <p class="thesis">Thesis: Cowrie SSH Honeypot Log Analysis <a href="https://github.com/famirapt/SSH-Threat-Intelligence-Lab" target="_blank" rel="noopener">GitHub</a></p>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Technical Support</dt><dd>Windows, Linux, troubleshooting, user accounts, routers, VPN, Sophos UTM</dd>
+        <dt>Web Security</dt><dd>ModSecurity WAF, DVWA, Nmap, Metasploit</dd>
+        <dt>Monitoring</dt><dd>ELK Stack, log analysis, Wireshark</dd>
+        <dt>Other</dt><dd>Bash, Python, technical documentation, user training</dd>
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Certifications</h2>
+      <ul class="plain">
+        <li><strong>Google Cybersecurity Professional Certificate</strong> · Google via Coursera · 2026</li>
+        <li><strong>Soft Skills Training</strong> · Jobberman · 2025</li>
+        <li><strong>TryHackMe</strong> · Active <a href="https://tryhackme.com/p/famira" target="_blank" rel="noopener">profile</a></li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Volunteering</h2>
+      <article class="entry">
+        <header><h3>Cybersecurity Analyst <span class="org">Pazelgreen Technologies</span></h3><span class="date">Mar 2025 – Present</span></header>
+        <ul><li>Contributed to security framework, policies and governance for software releases</li></ul>
+      </article>
+      <article class="entry">
+        <header><h3>Cybersecurity Instructor <span class="org">BT-Hub, Nigeria</span></h3><span class="date">Jun – Aug 2024</span></header>
+        <ul><li>Trained 20 non-technical students in cyber safety</li></ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Awards</h2>
+      <ul class="plain"><li><strong>Participant</strong>, Inter-University Cybersecurity Debate · Diary of Hackers Career Fair · 2021</li></ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Languages</h2>
+      <p>English (fluent), Hausa, Yoruba, Arabic (beginner)</p>
+    </section>
+
+    <section id="blog" class="cv-section">
+      <h2>Blog</h2>
+      <div id="blog-list" class="blog-strip">
+        <span class="muted">Loading posts…</span>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>I'm open to conversations about security roles, collaborations and projects.</p>
-        <ul class="contact-list">
-          <li><a href="mailto:famirapt@gmail.com">famirapt@gmail.com</a></li>
-          <li>0806 765 6124</li>
-          <li><a href="https://linkedin.com/in/famira-yaqeen" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/famirapt" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-    </section>
+    <footer class="cv-foot">
+      <p>© <span id="year"></span> Rahmatu Abdulkarim</p>
+    </footer>
   </main>
 
   <dialog id="post-dialog" class="post-dialog" aria-labelledby="post-title">
@@ -248,12 +155,6 @@
     </div>
     <div class="post-body" id="post-body"></div>
   </dialog>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Rahmatu Abdulkarim</p>
-    </div>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.umd.js"></script>
   <script src="script.js"></script>
