@@ -20,8 +20,8 @@
   --radius: 12px;
 }
 
-/* Dark theme */
-:root[data-theme="dark"] {
+/* Dark theme: applied by adding the .dark-mode class to <body> */
+body.dark-mode {
   --bg: #111817;
   --bg-alt: #17201e;
   --surface: #1b2624;

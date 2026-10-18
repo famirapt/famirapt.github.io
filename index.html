@@ -6,18 +6,17 @@
   <title>Rahmatu Abdulkarim | Cybersecurity Analyst</title>
   <meta name="description" content="Rahmatu Abdulkarim, cybersecurity analyst. Projects, experience, education and blog.">
   <link rel="stylesheet" href="style.css">
-  <script>
-    (function () {
-      var theme = null;
-      try { theme = localStorage.getItem('theme'); } catch (e) {}
-      if (theme !== 'light' && theme !== 'dark') {
-        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 </head>
 <body>
+  <script>
+    // Apply the saved or system theme before the page paints.
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.body.classList.add('dark-mode');
+    })();
+  </script>
 
   <header class="site-header">
     <div class="container bar">
