@@ -1,10 +1,13 @@
 /* Simple, professional portfolio. Mild colours, responsive. */
 
-/* Colours */
+/* Light theme (default) */
 :root {
   --bg: #fbfaf7;
   --bg-alt: #f1f5f2;
   --surface: #ffffff;
+  --header-bg: rgba(251, 250, 247, 0.95);
+  --accent-hover: #326a61;
+  --code-bg: #f1f5f2;
   --header-bg: rgba(251, 250, 247, 0.95);
   --text: #2d3748;
   --heading: #1f2d3d;
@@ -16,6 +19,23 @@
   --code-bg: #f1f5f2;
   --radius: 12px;
 }
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --bg: #111817;
+  --bg-alt: #17201e;
+  --surface: #1b2624;
+  --header-bg: rgba(17, 24, 23, 0.94);
+  --text: #d5e0dc;
+  --heading: #f0f5f3;
+  --muted: #9aaca7;
+  --accent: #7cc3b5;
+  --accent-hover: #9dd6ca;
+  --accent-soft: #1d3731;
+  --border: #2a3b37;
+  --code-bg: #0f1514;
+}
+
 
 
 * { box-sizing: border-box; }
@@ -236,3 +256,39 @@ ul { margin: 0; padding: 0; list-style: none; }
   .blog-strip .post-pill { max-width: 240px; }
 }
 
+
+/* Light / dark switch */
+.switch {
+  position: relative;
+  width: 58px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+  flex-shrink: 0;
+}
+.switch:hover { border-color: var(--accent); }
+.switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+}
+.switch-thumb svg { display: block; }
+.switch .icon-moon { display: none; }
+.switch[aria-checked="true"] .switch-thumb { transform: translateX(28px); }
+.switch[aria-checked="true"] .icon-sun { display: none; }
+.switch[aria-checked="true"] .icon-moon { display: block; }
+.switch[aria-checked="true"] { border-color: var(--accent); }

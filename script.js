@@ -95,3 +95,25 @@
 
   loadPosts();
 })();
+
+// Light / dark mode switch. The initial theme is set in <head> to avoid a flash.
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+
+  function sync() {
+    toggle.setAttribute('aria-checked', isDark() ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+
+  sync();
+})();
