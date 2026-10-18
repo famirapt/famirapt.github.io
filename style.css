@@ -242,3 +242,17 @@ li { margin-bottom: 0.4rem; }
   .section { padding: 44px 0; }
   .btn { width: 100%; text-align: center; }
 }
+
+/* Blog posts: one horizontal row that scrolls sideways */
+#blog-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+#blog-list .card {
+  flex: 0 0 min(300px, 82vw);
+  scroll-snap-align: start;
+}
