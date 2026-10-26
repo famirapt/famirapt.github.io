@@ -1,19 +1,11 @@
-// Blog strip: loads posts live from the "blogs" repository on GitHub.
+// Shared site script: light/dark switch and the blog list on the home page.
 (function () {
-  var OWNER = 'famirapt';
-  var REPO = 'blogs';
-  var BRANCH = 'main';
-  var RAW = 'https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/' + BRANCH + '/';
-  var REPO_URL = 'https://github.com/' + OWNER + '/' + REPO;
-
+  var RAW = "https://raw.githubusercontent.com/famirapt/blogs/main/";
+  var REPO_URL = "https://github.com/famirapt/blogs";
   var list = document.getElementById('blog-list');
-  var dialog = document.getElementById('post-dialog');
-  var postMeta = document.getElementById('post-meta');
-  var postTitle = document.getElementById('post-title');
-  var postBody = document.getElementById('post-body');
-  var closeBtn = document.getElementById('post-close');
+  if (!list) return;
 
-  function showListError() {
+  function showError() {
     list.textContent = '';
     var p = document.createElement('p');
     p.className = 'muted';
@@ -27,73 +19,32 @@
     list.appendChild(p);
   }
 
-  function renderPosts(posts) {
-    list.textContent = '';
-    posts.forEach(function (post) {
-      var button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'post-pill';
-      button.title = post.excerpt || post.title || '';
+  fetch(RAW + 'blogs.json')
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (posts) {
+      if (!Array.isArray(posts) || posts.length === 0) throw new Error('no posts');
+      list.textContent = '';
+      posts.forEach(function (post) {
+        var a = document.createElement('a');
+        a.className = 'post-item';
+        a.href = 'post.html?id=' + encodeURIComponent(post.id);
 
-      var title = document.createElement('span');
-      title.className = 'pill-title';
-      title.textContent = post.title || 'Untitled post';
+        var title = document.createElement('span');
+        title.className = 'pill-title';
+        title.textContent = post.title || 'Untitled post';
 
-      var date = document.createElement('span');
-      date.className = 'pill-date';
-      date.textContent = post.date || '';
+        var date = document.createElement('span');
+        date.className = 'pill-date';
+        date.textContent = post.date || '';
 
-      button.append(title, date);
-      button.addEventListener('click', function () { openPost(post); });
-      list.appendChild(button);
-    });
-  }
-
-  function loadPosts() {
-    fetch(RAW + 'blogs.json')
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function (posts) {
-        if (!Array.isArray(posts) || posts.length === 0) throw new Error('no posts');
-        renderPosts(posts);
-      })
-      .catch(showListError);
-  }
-
-  function openPost(post) {
-    postMeta.textContent = [post.date, post.readTime].filter(Boolean).join(' · ');
-    postTitle.textContent = post.title || 'Untitled post';
-    postBody.textContent = 'Loading…';
-    dialog.showModal();
-
-    var path = (post.contentPath || '').split('/').map(encodeURIComponent).join('/');
-    fetch(RAW + path)
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.text();
-      })
-      .then(function (markdown) {
-        postBody.innerHTML = window.marked.parse(markdown);
-        postBody.querySelectorAll('img').forEach(function (img) {
-          var src = img.getAttribute('src') || '';
-          if (src && !/^(https?:|data:)/.test(src)) {
-            img.src = RAW + src.split('/').map(encodeURIComponent).join('/');
-          }
-        });
-      })
-      .catch(function () {
-        postBody.textContent = 'This article could not be loaded. Try again later.';
+        a.append(title, date);
+        list.appendChild(a);
       });
-  }
-
-  closeBtn.addEventListener('click', function () { dialog.close(); });
-  dialog.addEventListener('click', function (e) {
-    if (e.target === dialog) dialog.close();
-  });
-
-  loadPosts();
+    })
+    .catch(showError);
 })();
 
 // Light / dark mode switch: toggles the .dark-mode class on <body>.
